@@ -38,6 +38,22 @@ describe UsersController do
         end
       end
 
+      it "should have a delete link for admins" do
+        @user.toggle!(:admin)
+        other_user = User.all.second
+        get :index
+        response.should have_selector('a', :href=>"/users/#{other_user.id}",
+        :content =>"delete")
+      end
+
+      it "should not have delete link for non-admins" do
+        other_user = User.all.second
+        get :index
+        response.should_not have_selector('a', :href=>"/users/#{other_user.id}",
+        :content =>"delete")
+      end
+
+
     end
   end
 
