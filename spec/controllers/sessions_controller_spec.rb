@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe SessionsController do
-
+  #test commit
   render_views
 
   describe "GET 'new'" do
