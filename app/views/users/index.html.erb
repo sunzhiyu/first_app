@@ -1,0 +1,19 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<h1> All users </h1>
+
+<ul class ="users">
+  <% @users.each do |user| %>
+  <li>
+    <%= gravatar_for user, :size => 30 %>
+    <%= link_to user.name, user %>
+    <%= link_to "delete", user, :method=>:delete, :confirm=>"You sure?",
+    :title =>"Delete #{user.name}"%>
+   
+  </li>
+  <%end%>
+</ul>
+

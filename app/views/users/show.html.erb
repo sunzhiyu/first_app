@@ -1,0 +1,18 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+<table class="profile" summary="Profile information">
+  <tr>
+    <td class="main">
+      <h1>
+        <%=gravatar_for @user%>
+        <%=@user.name%>
+      </h1>
+    </td>
+    <td class="siderbar round">
+      <strong>Name</strong> <%=@user.name%><br/>
+      <strong>URL</strong> <%=link_to user_path(@user),user_path(@user)%>
+    </td>
+  </tr>
+</table>
