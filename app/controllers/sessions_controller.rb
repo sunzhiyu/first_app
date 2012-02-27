@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  #test commit
   def new
     @title = "Sign in"
   end
